@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+
+  <link rel="stylesheet" href="./styles/main.css">
+
 </head>
+
 <body>
 
-  We're coming soon
+  <main class="page">
+    <header class="header">
+      <div class="header__inner container">
+        <img src="./assets/images/logos/logo.svg" alt="Base Apparel">
+      </div>
+    </header>
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
+    <picture class="hero-media">
+      <source media="(min-width: 48rem)" srcset="./assets/images/hero/desktop.jpg">
+      <img src="./assets/images/hero/mobile.jpg" alt="">
+    </picture>
 
-  Email Address
-  
-      <footer class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </footer>
+    <section class="hero">
+      <div class="hero__inner container">
+        <h1 class="hero__title">We're <span>coming soon</span></h1>
+        <p class="hero__description">
+          Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date
+          with announcements and our launch deals.
+        </p>
+        <form id="form" class="form" novalidate>
+          <label for="email" class="visually-hidden">Email address</label>
+          <input type="email" name="email" id="email" class="form__input" placeholder="Email Address"
+            autocomplete="email" aria-describedby="email-error" required>
+          <img src="./assets/images/icons/icon-error.svg" alt="" class="form__icon" hidden>
+          <button type="submit" class="form__submit">
+            <span class="visually-hidden">Subscribe to email updates</span>
+            <img src="./assets/images/icons/icon-arrow.svg" alt="">
+          </button>
+          <p id="email-error" class="form__message" aria-live="polite" hidden>Please provide a valid email</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io/challenges" target="_blank" rel="noopener noreferrer"
+      class="attribution__link">Frontend Mentor</a> – Coded by <a href="https://www.frontendmentor.io/profile/vimpdev"
+      target="_blank" rel="noopener noreferrer" class="attribution__link">VIMP</a>
+  </footer>
 </body>
+
 </html>
