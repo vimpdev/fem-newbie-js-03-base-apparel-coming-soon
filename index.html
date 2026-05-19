@@ -11,6 +11,8 @@
 
   <link rel="stylesheet" href="./styles/main.css">
 
+  <script src="./scripts/main.js" defer></script>
+
 </head>
 
 <body>
@@ -23,21 +25,26 @@
     </header>
 
     <picture class="hero-media">
-      <source media="(min-width: 48rem)" srcset="./assets/images/hero/desktop.jpg">
-      <img src="./assets/images/hero/mobile.jpg" alt="">
+      <source media="(min-width: 64rem)" srcset="./assets/images/hero/desktop.webp">
+      <source media="(min-width: 37.5rem)" srcset="./assets/images/hero/tablet.webp">
+      <img src="./assets/images/hero/mobile.webp" alt="">
     </picture>
 
     <section class="hero">
-      <div class="hero__inner container">
-        <h1 class="hero__title">We're <span>coming soon</span></h1>
-        <p class="hero__description">
-          Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date
-          with announcements and our launch deals.
-        </p>
-        <form id="form" class="form" novalidate>
+      <div class="hero__inner container stack">
+        <div class="hero__text stack">
+          <h1 class="hero__title">We're <span>coming soon</span></h1>
+          <p class="hero__description">
+            Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay
+            up-to-date
+            with announcements and our launch deals.
+          </p>
+        </div>
+
+        <form id="form" class="form stack" novalidate>
           <label for="email" class="visually-hidden">Email address</label>
-          <input type="email" name="email" id="email" class="form__input" placeholder="Email Address"
-            autocomplete="email" aria-describedby="email-error" required>
+          <input type="email" name="email" id="email" class="form__input" pattern="^[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}$"
+            placeholder="Email Address" autocomplete="email" aria-describedby="email-error" required>
           <img src="./assets/images/icons/icon-error.svg" alt="" class="form__icon" hidden>
           <button type="submit" class="form__submit">
             <span class="visually-hidden">Subscribe to email updates</span>
