@@ -1,0 +1,51 @@
+@layer tokens {
+
+  :root {
+    --clr-white: #FFFFFF;
+    --clr-black: #000000;
+    --clr-gray-900: #423A3A;
+    --clr-red-400: #F96464;
+    --clr-pink-500: #C66E6E;
+    --clr-pink-600: #874040;
+
+    --gradient-surface-page: linear-gradient(135deg, #FFFFFF, #FFF4F4);
+    --gradient-surface-button: linear-gradient(135deg, #F8BFBF, #EE8B8B);
+
+    --clr-text-heading: var(--clr-gray-900);
+    --clr-text-body: var(--clr-pink-600);
+    --clr-text-error: var(--clr-red-400);
+
+    --space-0: 0;
+    --space-50: 0.25rem;
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-800: 4rem;
+    --space-1000: 5rem;
+    --space-1100: 5.5rem;
+    --space-1700: 8.5rem;
+
+    --ff-base: 'Josefin Sans', system-ui, sans-serif;
+
+    --fs-base: 1rem;
+    --fs-heading: clamp(2.5rem, 1rem + 6.4vw, 4rem);
+    --fs-body: clamp(0.875rem, .75rem + .53vw, 1rem);
+    --fs-error: 0.8125rem;
+    --fs-caption: 0.75rem;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+
+    --border-input: 0.0625rem solid var(--clr-pink-600);
+    --border-input-error: 0.125rem solid var(--clr-red-400);
+
+    --shadow-button: 0 0.9375rem 1.25rem color-mix(in srgb, var(--clr-pink-500) 25%, transparent);
+
+    --radius-full: 1.75rem;
+
+    --transition-fast: .25s ease;
+  }
+}
