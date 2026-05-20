@@ -45,6 +45,7 @@
     --shadow-button: 0 0.9375rem 1.25rem color-mix(in srgb, var(--clr-pink-500) 25%, transparent);
 
     --radius-full: 1.75rem;
+    --radius-full: 3em;
 
     --transition-fast: .25s ease;
   }

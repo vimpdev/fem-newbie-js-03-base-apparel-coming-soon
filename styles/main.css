@@ -25,7 +25,7 @@
 
   .container {
     --container-gutter: calc(var(--space-400) * 2);
-    --max-width: 38rem;
+    --max-width: 608px;
 
     inline-size: min(100% - var(--container-gutter), var(--max-width));
     margin-inline: auto;
@@ -68,16 +68,13 @@
   /* HERO */
   .hero {
     --padding-block: var(--space-800);
-    --max-width: 48ch;
 
-    max-inline-size: var(--max-width);
     padding-block: var(--padding-block);
     justify-self: center;
   }
 
   .hero__inner {
     --stack-gap: var(--space-400);
-
     text-align: center;
   }
 
@@ -226,6 +223,39 @@
   }
 }
 
-@layer responsive {}
+@layer responsive {
+
+  @media (width >=37.5rem) {
+    .hero__inner {
+    --max-width: 445px;
+
+    inline-size: var(--max-width);
+    }
+
+    .hero__text {
+      --stack-gap: var(--space-400);
+    --max-width: 48ch;
+
+    inline-size: var(--max-width);
+    }
+
+    .form__input {
+      --padding-block: var(--space-200);
+      --padding-left: var(--space-400);
+      --padding-right: var(--space-1700);
+      --padding-right: calc(var(--space-1100) + var(--space-200));
+      line-height: 1.38;
+    }
+
+    .form__submit {
+      --max-width: 6.25rem;
+    }
+      .form__message {
+    --inset-left: var(--space-400);}
+    
+  .form__icon {
+    --inset-right: calc(var(--space-1000) + var(--space-300));}
+  }
+}
 
 @layer states {}
