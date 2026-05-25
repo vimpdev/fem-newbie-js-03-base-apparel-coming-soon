@@ -169,6 +169,8 @@
     background: var(--gradient-surface-button);
     border-radius: var(--radius-pill);
     box-shadow: var(--shadow-button);
+    transform: scale(1.05);
+    transition: filter var(--transition-fast);
 
     position: absolute;
     inset-inline-end: 0;
@@ -196,7 +198,7 @@
 
   .attribution__link {
     margin-inline: .3em;
-    border-radius: var(--radius-pill);
+    border-radius: .25em;
     position: relative;
 
     &::after {
@@ -207,9 +209,10 @@
       inline-size: 100%;
       block-size: 0.125rem;
       background-color: currentColor;
-      transform: scale(1);
+      transform: scaleX(1);
       transform-origin: center;
       transition: transform var(--transition-fast);
+      pointer-events: none;
     }
   }
 }
@@ -260,7 +263,7 @@
   }
 
   /* DESKTOP */
-  @media (width >=68.75rem) {
+  @media (width >=75rem) {
     .container {
       inline-size: auto;
     }
@@ -305,4 +308,13 @@
   }
 }
 
-@layer states {}
+@layer states {
+
+  .form__submit:is(:hover, :focus-visible) {
+    filter: brightness(1.15);
+  }
+
+  .attribution__link:is(:hover, :focus-visible)::after {
+    transform: scaleX(0);
+  }
+}
