@@ -215,6 +215,45 @@
       pointer-events: none;
     }
   }
+
+  /* DIALOG */
+  .dialog {
+    inline-size: min(100% - 2rem, 25rem);
+    padding: var(--space-300) var(--space-400);
+    text-align: center;
+    background: var(--gradient-surface-page);
+    border-radius: .5em;
+    border: 0.125rem solid var(--clr-pink-600);
+    color: inherit;
+
+    &::backdrop {
+      background-color: var(--clr-pink-600);
+      opacity: .75;
+    }
+  }
+
+  .dialog__title {
+    margin-block-end: var(--space-100);
+    font-size: 1.5rem;
+  }
+
+  .dialog__description {
+    margin-block-end: var(--space-300);
+    font-size: var(--fs-body);
+  }
+
+  .dialog__button {
+    inline-size: 100%;
+    padding-block: var(--space-50);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    background: var(--gradient-surface-button);
+    color: var(--clr-text-heading);
+    border: none;
+    border-radius: 3em;
+    box-shadow: var(--shadow-button);
+    transition: transform var(--transition-fast);
+  }
 }
 
 @layer utilities {

@@ -45,7 +45,7 @@
           <label for="email" class="visually-hidden">Email address</label>
           <input type="email" name="email" id="email" class="form__input" pattern="^[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}$"
             placeholder="Email Address" autocomplete="email" aria-describedby="email-error" required>
-          <img src="./assets/images/icons/icon-error.svg" alt="" class="form__icon" hidden>
+          <img id="email-icon" src="./assets/images/icons/icon-error.svg" alt="" class="form__icon" hidden>
           <button type="submit" class="form__submit">
             <span class="visually-hidden">Subscribe to email updates</span>
             <img src="./assets/images/icons/icon-arrow.svg" alt="">
@@ -63,6 +63,14 @@
         target="_blank" rel="noopener noreferrer" class="attribution__link">VIMP</a>
     </small>
   </footer>
+
+  <dialog id="dialog" class="dialog" aria-labelledby="dialog-title">
+    <h2 id="dialog-title" class="dialog__title">Thanks for subscribing!</h2>
+    <p class="dialog__description">We'll notify you when we launch.</p>
+    <form method="dialog">
+      <button class="dialog__button">Got it</button>
+    </form>
+  </dialog>
 </body>
 
 </html>
