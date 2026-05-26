@@ -16,7 +16,7 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
 ## 🔗 Links
 
 - 🌎 [Live site](https://vimpdev.github.io/fem-newbie-js-03-base-apparel-coming-soon/)
-<!-- - 📌 [Frontend Mentor solution]() -->
+- 📌 [Frontend Mentor solution](https://www.frontendmentor.io/solutions/base-apparel-responsive-landing-page-with-accessible-validation-paw2gL_Wsa)
 
 ---
 
