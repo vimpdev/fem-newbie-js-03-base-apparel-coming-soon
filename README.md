@@ -1,125 +1,189 @@
-# Frontend Mentor - Base Apparel coming soon page solution
+# Base Apparel coming soon page
 
-This is a solution to the [Base Apparel coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+![HTML](https://img.shields.io/badge/HTML-5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-000000?logo=javascript&logoColor=F7DF1E)
+![Status](https://img.shields.io/badge/status-live-2ea44f)
 
-## Table of contents
+![](./docs/github-preview.png)
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+Responsive coming soon landing page with accessible email validation built using semantic HTML, modern CSS architecture, and the Constraint Validation API.
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+This is a solution to the [Base Apparel coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0).
 
-## Overview
+---
 
-### The challenge
+## 🔗 Links
 
-Users should be able to:
+- 🌎 [Live site](https://vimpdev.github.io/fem-newbie-js-03-base-apparel-coming-soon/)
+<!-- - 📌 [Frontend Mentor solution]() -->
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Receive an error message when the `form` is submitted if:
-  - The `input` field is empty
-  - The email address is not formatted correctly
+---
 
-### Screenshot
+## 🎬 Demo
 
-![](./screenshot.jpg)
+![](./docs/demo.gif)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+---
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+## 📸 Screenshots
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+### 📱 Mobile
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+| Validation states | Success states |
+| --- | --- |
+| ![](./docs/mobile-validation-states.avif) | ![](./docs/mobile-success-states.avif) |
 
-### Links
+### 📲 Tablet
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+| Validation states | Success states |
+| --- | --- |
+| ![](./docs/tablet-validation-states.avif) | ![](./docs/tablet-success-states.avif) |
 
-## My process
+### 🖥️ Desktop
 
-### Built with
+| Default | Invalid email |
+| --- | --- |
+| ![](./docs/desktop-default.avif) | ![](./docs/desktop-invalid.avif) |
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+| Valid email | Success dialog |
+| --- | --- |
+| ![](./docs/desktop-valid.avif) | ![](./docs/desktop-success.avif) |
+
+---
+
+## ✨ Features
+
+- Mobile-first responsive layout
+- Adaptive hero images using `<picture>`
+- Accessible email validation using the **Constraint - Validation API**
+- Real-time validation feedback
+- Error icon and inline validation messaging
+- Success dialog using the native `<dialog>` element
+- Keyboard-accessible interactive states
+- CSS architecture using `@layer` and native CSS nesting
+
+---
+
+## 🛠 Built With
+
+- Semantic HTML5
+- Modern CSS
+  - CSS Custom Properties
+  - CSS Grid
+  - Flexbox
+  - Native CSS Nesting
+  - `@layer`
+  - `clamp()`
+  - Logical properties
+- Vanilla JavaScript
+- Constraint Validation API
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+---
 
-### What I learned
+## 🧠 What I Learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project helped reinforce several frontend fundamentals beyond simply reproducing a layout.
 
-To see how you can add code snippets, see below:
+### Responsive image strategy
 
+Instead of using a single image across all breakpoints, the layout uses the <picture> element with dedicated mobile, tablet, and desktop assets:
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<picture class="hero-media">
+  <source media="(min-width: 75rem)" srcset="./assets/images/hero/desktop.webp">
+  <source media="(min-width: 37.5rem)" srcset="./assets/images/hero/tablet.webp">
+  <img src="./assets/images/hero/mobile.webp" alt="">
+</picture>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+
+### Native form validation with better UX
+
+The form validation was implemented using the browser’s built-in validation system instead of custom regex-heavy JavaScript.
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function validateField() {
+  const isValid = $email.checkValidity();
+
+  if (!isValid) {
+    showError();
+    return false;
+  }
+
+  clearError();
+  return true;
 }
 ```
+This approach keeps the logic simpler, more maintainable, and accessible.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### CSS architecture with @layer
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+The stylesheet is organized into layered sections to separate responsibilities clearly:
+```css
+@layer reset, fonts, tokens, base, layout, components, utilities, responsive, states;
+```
+This made the project easier to scale and reason about while developing responsive states and component behaviors.
 
-### Continued development
+---
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+## 🧩 Validation Flow (Pseudocode)
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```text
+ON form submit
+  PREVENT default submission
 
-### Useful resources
+  VALIDATE email field
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+  IF email is invalid
+    SHOW error message
+    SHOW error icon
+    MARK input as invalid
+    STOP
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+  CLEAR validation state
+  RESET form
+  OPEN success dialog
 
-### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+ON input blur
+  IF field is not empty
+    VALIDATE field
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+ON input event
+  IF an error is currently visible
+    REVALIDATE field in real time
+```
 
-## Author
+---
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+## ♿ Accessibility Notes
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Semantic landmarks (`header`, `main`, `footer`)
+- Hidden accessible labels using `.visually-hidden`
+- `aria-invalid` applied dynamically
+- `aria-describedby` connected to validation messaging
+- `aria-live="polite"` for screen reader feedback
+- Keyboard-accessible focus states
+- Native dialog behavior via `<dialog>`
 
-## Acknowledgments
+---
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+## 🤖 AI Collaboration
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+AI tools were used as a collaborative learning resource during development for:
+
+- Reviewing accessibility decisions
+- Discussing CSS architecture tradeoffs
+- Exploring modern CSS features
+- Refining validation logic
+- Improving naming consistency and project structure
+
+All implementation, styling, and final code decisions were manually developed and integrated into the project workflow.
+
+---
+
+## 👩‍💻 Author
+
+- Frontend Mentor – [@vimpdev](https://www.frontendmentor.io/profile/vimpdev)
+
+---
